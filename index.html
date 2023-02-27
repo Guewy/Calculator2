@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js" defer></script>
+    <title>Calculator? I don't even know her!</title>
+</head>
+<body>
+    <div class="page">
+        <div class="Calculator">
+            <div class="Screen">
+                <div class="expressionScreen"  id="expressionS"></div>
+                <div class="displayScreen" id="displayS">0</div>
+            </div>
+            <div class="buttons">
+                <div class="leftB">
+                    <div class="oneToNine" id="nums">
+                        <button data-number class="numberButtons" id="seven">7</button>
+                        <button data-number class="numberButtons" id="eight">8</button>
+                        <button data-number class="numberButtons" id="nine">9</button>
+
+                        <button data-number class="numberButtons" id="four">4</button>
+                        <button data-number class="numberButtons" id="five">5</button>
+                        <button data-number class="numberButtons" id="six">6</button>
+
+                        <button data-number class="numberButtons" id="one">1</button>
+                        <button data-number class="numberButtons" id="two">2</button>
+                        <button data-number class="numberButtons" id="three">3</button>
+                    </div>
+                    <div class="zeroClearEquals">
+                        <button data-number class="numberButtons" id="zero">0</button>
+                        <button class="clearButton" id="clearB">C</button>
+                        <button class="equalsButton" id="equalsB">=</button>
+                    </div>
+                </div>
+                <div class="rightB">
+                    <button data-operator type="operatorButtons" class="operatorButton" id="add">+</button>
+                    <button data-operator type="operatorButtons" class="operatorButton" id="sub">-</button>
+                    <button data-operator type="operatorButtons" class="operatorButton" id="mul">×</button>
+                    <button data-operator type="operatorButtons" class="operatorButton" id="div">÷</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
