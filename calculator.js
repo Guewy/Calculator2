@@ -78,7 +78,7 @@ function operation(operator){
         check = 1;
         //Move the secondNo to the firstNo position
         console.log("In check 0, firstNo is " + firstNo + " second no is " + secondNo);
-        firstNo = secondNo;
+        firstNo = display.textContent;
         console.log("After change, firstNo is " + firstNo + " second no is " + secondNo);
     }
     //else compute and change display
@@ -129,7 +129,17 @@ function equals() {
         errorCheck = 1;
         return;
     }
-    compute(firstNo, pastOperator, secondNo);
+
+    console.log("In the =:");
+    console.log("First no is: " +firstNo);
+    console.log("pastOperator is: " +pastOperator);
+    console.log("Second no is: " +secondNo);
+    expressionScreen.textContent = firstNo + " " + pastOperator + " " + secondNo + " =";
+
+    firstNo = compute(firstNo, pastOperator, secondNo);
+    console.log("Result is: " +firstNo);
+    display.textContent = firstNo;
+    check = 0;
 }
 
 function clear() {
