@@ -15,7 +15,7 @@ let secondNo = 0;
 
 //Error check variable
 let errorCheck = 0;
-
+let equalsCheck = 0;
 
 numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -42,10 +42,11 @@ function displayF(number){
     if(errorCheck == 1){
         clear();
     }
-    if(display.textContent == 0){
+    if(display.textContent == 0 || equalsCheck == 1){
         display.textContent = number;
         secondNo = display.textContent;
         console.log("secondNo is " + secondNo);
+        equalsCheck = 0;
     }
     else {
         display.textContent += number;
@@ -159,6 +160,7 @@ function equals() {
         expressionScreen.textContent = "";
         check = 0;
         pastOperator = '';
+        equalsCheck = 1;
         return 
     }
     else{
@@ -166,6 +168,7 @@ function equals() {
         console.log("Result is: " +firstNo);
         display.textContent = firstNo;
         check = 0;  
+        equalsCheck = 1;
     }
 }
 
