@@ -87,10 +87,21 @@ function operation(operator){
         console.log("First no is: " +firstNo);
         console.log("pastOperator is: " +pastOperator);
         console.log("Second no is: " +secondNo);
-        firstNo = compute(firstNo, pastOperator, secondNo);
-        console.log("Result is " + firstNo);
-        console.log("New operator is: " +operator);
-        expressionScreen.textContent = firstNo + " " + operator;
+        if(secondNo == 0 && pastOperator == "÷"){
+            console.log("Tried to div by 0")
+            display.textContent = "Error - Can't divide by 0";
+            errorCheck = 1;
+            expressionScreen.textContent = "";
+            check = 0;
+            pastOperator = '';
+            return 
+        }
+        else { 
+            firstNo = compute(firstNo, pastOperator, secondNo);
+            console.log("Result is " + firstNo);
+            console.log("New operator is: " +operator);
+            expressionScreen.textContent = firstNo + " " + operator;
+        }
     }
     //Set past Operator for compute function
     pastOperator = operator;
@@ -106,13 +117,14 @@ function compute(a, operator, b){
     if(operator == "-"){ return (subtract(a,b))}
     if(operator == "×"){ return (multiply(a,b))}
     if(operator == "÷"){
-        if(display.textContent == "0"){
+        if(b == 0){
+            console.log("Tried to div by 0")
             display.textContent = "Error - Can't divide by 0";
             errorCheck = 1;
             expressionScreen.textContent = "";
             check = 0;
             pastOperator = '';
-            return
+            return 
         }
         else{ return divide(a,b)}
     }
@@ -125,8 +137,8 @@ function equals() {
         lastChar == "-" && display.textContent == "" || 
         lastChar == "×" && display.textContent == "" || 
         lastChar == "÷" && display.textContent == "" ) {
-        display.textContent = "Invalid expression";
-        errorCheck = 1;
+        //display.textContent = "Invalid expression";
+        //errorCheck = 1;
         return;
     }
 
@@ -136,10 +148,21 @@ function equals() {
     console.log("Second no is: " +secondNo);
     expressionScreen.textContent = firstNo + " " + pastOperator + " " + secondNo + " =";
 
-    firstNo = compute(firstNo, pastOperator, secondNo);
-    console.log("Result is: " +firstNo);
-    display.textContent = firstNo;
-    check = 0;
+    if(secondNo == 0 && pastOperator == "÷"){
+        console.log("Tried to div by 0")
+        display.textContent = "Error - Can't divide by 0";
+        errorCheck = 1;
+        expressionScreen.textContent = "";
+        check = 0;
+        pastOperator = '';
+        return 
+    }
+    else{
+        firstNo = compute(firstNo, pastOperator, secondNo);
+        console.log("Result is: " +firstNo);
+        display.textContent = firstNo;
+        check = 0;  
+    }
 }
 
 function clear() {
