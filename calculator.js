@@ -55,6 +55,10 @@ function displayF(number){
 }
 
 function operation(operator){
+    if(errorCheck == 1){
+        clear();
+        display.textContent = "0";
+    }
     console.log("start of operator firstNo is " + firstNo)
     //Check for double operator press
     let lastChar = expressionScreen.textContent[expressionScreen.textContent.length - 1];
