@@ -141,7 +141,8 @@ function equals() {
     if( lastChar == "+" && display.textContent == "" || 
         lastChar == "-" && display.textContent == "" || 
         lastChar == "×" && display.textContent == "" || 
-        lastChar == "÷" && display.textContent == "" ) {
+        lastChar == "÷" && display.textContent == "" ||
+        check == 0) {
         //display.textContent = "Invalid expression";
         //errorCheck = 1;
         return;
